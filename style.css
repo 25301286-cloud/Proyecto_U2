@@ -1,0 +1,344 @@
+
+/* COLORES DEL PROYECTO */
+body {
+    --verde: #155B3A;
+    --verde-oscuro: #22372B;
+    --crema: #F6F2E7;
+    --blanco: #FFFFFF;
+
+    margin: 0;
+    background-color: var(--crema);
+    color: var(--verde-oscuro);
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* ESTILOS GENERALES */
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.barra {
+    background-color: var(--verde);
+    padding: 17px 0;
+}
+
+.marca {
+    color: var(--blanco);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.marca:hover,
+.marca:focus {
+    color: var(--crema);
+}
+
+.barra .nav-link {
+    color: var(--blanco);
+    font-size: 14px;
+    margin-left: 17px;
+    font-weight: 500;
+}
+
+.barra .nav-link:hover,
+.barra .nav-link:focus,
+.barra .nav-link.activo {
+    color: var(--crema);
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--crema);
+    background-color: var(--crema);
+}
+
+/* PORTADA */
+.portada {
+    background-color: var(--crema);
+}
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.portada h1 {
+    font-size: 55px;
+    line-height: 1.16;
+    margin-bottom: 24px;
+}
+
+.portada h1 span {
+    color: var(--verde);
+}
+
+.descripcion {
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.boton-verde {
+    background-color: var(--verde);
+    border: 2px solid var(--verde);
+    color: var(--blanco);
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.boton-verde:hover,
+.boton-verde:focus {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.boton-contorno {
+    background-color: transparent;
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.boton-contorno:hover,
+.boton-contorno:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.frase-portada {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.foto-portada {
+    background-color: #080808;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+.foto-portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.pie-foto {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 21px;
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    font-size: 13px;
+}
+
+.pie-nombre {
+    font-weight: 700;
+}
+
+/* TÍTULOS Y SECCIONES */
+.seccion-blanca {
+    background-color: var(--blanco);
+}
+
+.seccion-crema {
+    background-color: var(--crema);
+}
+
+.encabezado-seccion {
+    margin-bottom: 36px;
+}
+
+.encabezado-seccion h2 {
+    color: var(--verde-oscuro);
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.encabezado-seccion p:last-child {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+/* TARJETAS DE PLATILLOS */
+.tarjeta-comida {
+    height: 100%;
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.foto-comida {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
+}
+
+.informacion-comida {
+    padding: 22px;
+}
+
+.categoria-comida {
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.informacion-comida h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.detalle-comida {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.precio {
+    color: var(--verde);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* TARJETAS PEQUEÑAS DE ESPECIALIDADES */
+.tarjeta-pequena {
+    height: 100%;
+    background-color: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #E6E9E2;
+}
+
+.foto-pequena {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
+}
+
+.tarjeta-pequena h3 {
+    font-size: 18px;
+    padding: 17px 20px;
+    margin: 0;
+}
+
+/* CATEGORÍAS */
+.seccion-verde {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.etiqueta-clara {
+    color: var(--crema);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.seccion-verde h2 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.seccion-verde p:last-child {
+    line-height: 1.8;
+}
+
+.cuadro-categoria {
+    height: 100%;
+    background-color: var(--blanco);
+    color: var(--verde);
+    padding: 27px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* PIE DE PÁGINA */
+.pie-pagina {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    font-size: 13px;
+}
+
+.nombre-footer {
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.pie-pagina a {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+/* CELULARES Y TABLETAS */
+@media (max-width: 991px) {
+    .barra .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .portada h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 575px) {
+    .portada {
+        text-align: center;
+    }
+
+    .portada h1 {
+        font-size: 36px;
+    }
+
+    .portada .botones-portada {
+        justify-content: center;
+    }
+
+    .encabezado-seccion h2,
+    .seccion-verde h2 {
+        font-size: 28px;
+    }
+
+    .pie-foto {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+    }
+
+    .frase-portada {
+        font-size: 11px;
+    }
+}
