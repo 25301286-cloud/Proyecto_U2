@@ -342,3 +342,140 @@ a {
         font-size: 11px;
     }
 }
+
+/* PAGINA DEL MENU */
+.encabezado-menu {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.encabezado-menu h1 {
+    font-size: 45px;
+}
+
+.encabezado-menu p:last-child {
+    margin-bottom: 0;
+}
+
+/* BOTONES DE CATEGORIAS */
+.navegacion-categorias {
+    background-color: var(--blanco);
+}
+
+.enlace-categoria {
+    display: inline-block;
+    color: var(--verde);
+    border: 2px solid var(--verde);
+    border-radius: 30px;
+    padding: 9px 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.enlace-categoria:hover,
+.enlace-categoria:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+/* SECCIONES DEL MENU */
+.seccion-menu {
+    background-color: var(--crema);
+}
+
+.seccion-menu.seccion-blanca {
+    background-color: var(--blanco);
+}
+
+.titulo-menu h2 {
+    color: var(--verde);
+    font-size: 32px;
+}
+
+/* TARJETAS */
+.tarjeta-menu,
+.tarjeta-tacos,
+.tarjeta-texto {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-menu {
+    height: 100%;
+}
+
+.imagen-menu {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
+}
+
+.contenido-menu,
+.contenido-tacos,
+.tarjeta-texto {
+    padding: 23px;
+}
+
+.contenido-menu h3,
+.contenido-tacos h3,
+.tarjeta-texto h3 {
+    color: var(--verde-oscuro);
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+
+.tarjeta-texto p {
+    font-size: 14px;
+}
+
+/* PRECIOS */
+.linea-precio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 1px solid #E6E9E2;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.linea-precio:last-child {
+    border-bottom: none;
+}
+
+.linea-precio strong {
+    color: var(--verde);
+    font-size: 16px;
+}
+
+/* ADAPTACION A CELULARES */
+@media (max-width: 575px) {
+    .encabezado-menu h1 {
+        font-size: 34px;
+    }
+
+    .titulo-menu h2 {
+        font-size: 28px;
+    }
+
+    .enlace-categoria {
+        font-size: 13px;
+        padding: 8px 13px;
+    }
+}
+
+/* ENLACES DESDE INICIO */
+a.cuadro-categoria {
+    display: block;
+}
+
+a.cuadro-categoria:hover,
+a.cuadro-categoria:focus {
+    background-color: var(--crema);
+    color: var(--verde);
+}

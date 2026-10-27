@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menú de La Escondida: antojitos, tacos, bocadillos y bebidas con sus precios.">
+    <title>La Escondida | Menú</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg barra">
+            <div class="container">
+                <a class="navbar-brand marca" href="index.html">LA ESCONDIDA</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuNavegacion" aria-controls="menuNavegacion"
+                    aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuNavegacion">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link activo" href="menu.html" aria-current="page">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#variedad">Especialidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="encabezado-menu py-5" id="categorias">
+            <div class="container text-center">
+                <p class="etiqueta-clara">LA ESCONDIDA</p>
+                <h1>Nuestro menú</h1>
+                <p>Elige entre nuestros antojitos, tacos, bocadillos y bebidas.</p>
+            </div>
+        </section>
+
+        <section class="navegacion-categorias py-4">
+            <div class="container d-flex flex-wrap justify-content-center gap-3">
+                <a class="enlace-categoria" href="#antojitos">Antojitos</a>
+                <a class="enlace-categoria" href="#tacos">Tacos</a>
+                <a class="enlace-categoria" href="#bocadillos">Bocadillos</a>
+                <a class="enlace-categoria" href="#bebidas">Bebidas</a>
+            </div>
+        </section>
+
+        <section class="seccion-menu py-5" id="antojitos">
+            <div class="container">
+                <div class="titulo-menu mb-4">
+                    <p class="etiqueta">SABOR MEXICANO</p>
+                    <h2>Antojitos</h2>
+                </div>
+
+                <div class="row g-4">
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/07_gorditas.jpg" class="imagen-menu img-fluid"
+                                alt="Gorditas rellenas sobre una tabla de madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Gorditas</h3>
+                                <div class="linea-precio">
+                                    <span>Sencillas</span>
+                                    <strong>$25</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Con carne</span>
+                                    <strong>$33</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/08_pambazos.jpg" class="imagen-menu img-fluid"
+                                alt="Pambazos rellenos sobre una tabla de madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Pambazos</h3>
+                                <div class="linea-precio">
+                                    <span>Sencillos</span>
+                                    <strong>$25</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Con carne</span>
+                                    <strong>$33</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/09_huarache.jpg" class="imagen-menu img-fluid"
+                                alt="Huarache con carne y queso sobre una tabla de madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Huaraches</h3>
+                                <div class="linea-precio">
+                                    <span>Con carne</span>
+                                    <strong>$45</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Con tripa</span>
+                                    <strong>$50</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="tarjeta-texto mt-4">
+                    <h3>Quesadillas</h3>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="linea-precio">
+                                <span>Sencillas</span>
+                                <strong>$25</strong>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="linea-precio">
+                                <span>Con carne</span>
+                                <strong>$33</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="seccion-menu seccion-blanca py-5" id="tacos">
+            <div class="container">
+
+                <div class="titulo-menu mb-4">
+                    <p class="etiqueta">LOS CLASICOS</p>
+                    <h2>Tacos</h2>
+                </div>
+
+                <article class="tarjeta-tacos">
+                    <div class="row g-0 align-items-center">
+
+                        <div class="col-lg-5">
+                            <img src="imagenes/01_tacos.jpg" class="imagen-menu img-fluid"
+                                alt="Tacos con carne, cilantro y limón sobre una tabla" loading="lazy">
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="contenido-tacos">
+
+                                <h3>Elige tus tacos</h3>
+
+                                <div class="linea-precio">
+                                    <span>Suadero</span>
+                                    <strong>$26</strong>
+                                </div>
+
+                                <div class="linea-precio">
+                                    <span>Longaniza</span>
+                                    <strong>$26</strong>
+                                </div>
+
+                                <div class="linea-precio">
+                                    <span>Bisteck</span>
+                                    <strong>$26</strong>
+                                </div>
+
+                                <div class="linea-precio">
+                                    <span>Pastor</span>
+                                    <strong>$26</strong>
+                                </div>
+
+                                <div class="linea-precio">
+                                    <span>Tripa</span>
+                                    <strong>$30</strong>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="seccion-menu py-5" id="bocadillos">
+            <div class="container">
+
+                <div class="titulo-menu mb-4">
+                    <p class="etiqueta">ALGO PARA CADA ANTOJO</p>
+                    <h2>Bocadillos</h2>
+                </div>
+
+                <div class="row g-4">
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/02_hamburguesa.jpg" class="imagen-menu img-fluid"
+                                alt="Hamburguesa con queso y vegetales sobre madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Hamburguesas</h3>
+                                <div class="linea-precio">
+                                    <span>Sencilla</span>
+                                    <strong>$60</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Hawaiana</span>
+                                    <strong>$75</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/03_hot_dogs.jpg" class="imagen-menu img-fluid"
+                                alt="Hot dogs con salsas sobre tabla de madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Hot dogs</h3>
+                                <div class="linea-precio">
+                                    <span>Sencillo</span>
+                                    <strong>$24</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>3 sencillos</span>
+                                    <strong>$65</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Hawaiano</span>
+                                    <strong>$29</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/04_alitas.jpg" class="imagen-menu img-fluid"
+                                alt="Alitas bañadas en salsa con papas y aderezo" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Alitas</h3>
+                                <div class="linea-precio">
+                                    <span>Solitas</span>
+                                    <strong>$75</strong>
+                                </div>
+                                <div class="linea-precio">
+                                    <span>Con papas</span>
+                                    <strong>$85</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/06_banderillas.jpg" class="imagen-menu img-fluid"
+                                alt="Banderillas acompañadas de papas y aderezos" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Banderilla</h3>
+                                <div class="linea-precio">
+                                    <span>Con papas</span>
+                                    <strong>$40</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-sm-6 col-lg-4">
+                        <div class="tarjeta-menu">
+                            <img src="imagenes/05_papas_francesas.jpg" class="imagen-menu img-fluid"
+                                alt="Papas a la francesa sobre madera" loading="lazy">
+
+                            <div class="contenido-menu">
+                                <h3>Papas a la francesa</h3>
+                                <div class="linea-precio">
+                                    <span>Orden</span>
+                                    <strong>$35</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="row g-4 mt-1">
+
+                    <article class="col-md-6">
+                        <div class="tarjeta-texto h-100">
+                            <h3>Dorilocos</h3>
+                            <div class="linea-precio">
+                                <span>Orden</span>
+                                <strong>$40</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-md-6">
+                        <div class="tarjeta-texto h-100">
+                            <h3>Nachos</h3>
+                            <div class="linea-precio">
+                                <span>Solos</span>
+                                <strong>$40</strong>
+                            </div>
+                            <div class="linea-precio">
+                                <span>Con carne</span>
+                                <strong>$50</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-menu seccion-blanca py-5" id="bebidas">
+            <div class="container">
+
+                <div class="titulo-menu mb-4">
+                    <p class="etiqueta">PARA ACOMPAÑAR</p>
+                    <h2>Bebidas</h2>
+                </div>
+
+                <article class="tarjeta-texto">
+                    <h3>Refrescos</h3>
+                    <p>Coca-Cola, Jarritos y Boing.</p>
+
+                    <div class="linea-precio">
+                        <span>Refresco</span>
+                        <strong>$26</strong>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <p class="m-0 nombre-footer">LA ESCONDIDA</p>
+            <p class="m-0">Tacos · Antojitos · Bocadillos · Bebidas</p>
+            <a href="index.html">Volver al inicio</a>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
