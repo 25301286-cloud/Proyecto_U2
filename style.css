@@ -28,9 +28,12 @@ a {
 }
 .marca {
     color: var(--blanco);
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
 }
 .marca:hover,
 .marca:focus {
@@ -201,13 +204,25 @@ a {
     font-size: 13px;
 }
 .nombre-footer {
-    font-weight: 800;
-    font-size: 19px;
-    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
 }
 .pie-pagina a {
     color: var(--blanco);
     text-decoration: underline;
+}
+
+/* NOMBRE DE LA ESCONDIDA EN OTRAS SECCIONES */
+.nombre-marca {
+    font-family: 'Lobster', cursive;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 /* CELULARES Y TABLETAS */
@@ -219,6 +234,9 @@ a {
 }
 
 @media (max-width: 575px) {
+    .marca {
+        font-size: 28px;
+    }
     .encabezado-seccion h2,
     .seccion-verde h2 {
         font-size: 28px;
