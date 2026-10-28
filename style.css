@@ -791,3 +791,28 @@ section[id] {
         font-size: 22px;
     }
 }
+
+/* PAGINA NOSOTROS */
+.imagen-nosotros {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.tarjeta-valor {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    padding: 27px;
+    height: 100%;
+}
+
+.tarjeta-valor h3 {
+    color: var(--verde);
+    font-size: 21px;
+}
+
+.tarjeta-valor p {
+    line-height: 1.8;
+    margin-bottom: 0;
+}

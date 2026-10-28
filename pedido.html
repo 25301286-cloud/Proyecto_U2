@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,44 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg barra">
             <div class="container">
-
-                <a class="navbar-brand marca" href="index.html">
-                    LA ESCONDIDA
-                </a>
-
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavegacion"
-                    aria-controls="menuNavegacion"
-                    aria-expanded="false"
-                    aria-label="Abrir menú de navegación">
-
+                <a class="navbar-brand marca" href="index.html">LA ESCONDIDA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuNavegacion" aria-controls="menuNavegacion"
+                    aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="menuNavegacion">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (<span class="contador-carrito">0</span>)</a></li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Menú</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="carrito.html">
-                                Carrito (<span class="contador-carrito">0</span>)
-                            </a>
-                        </li>
-
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,308 +35,123 @@
     </header>
 
     <main>
-
         <section class="encabezado-menu py-5">
             <div class="container text-center">
-
                 <p class="etiqueta-clara">LA ESCONDIDA</p>
-
                 <h1>Datos de tu pedido</h1>
-
-                <p>
-                    Revisa tus productos y completa
-                    la información de entrega.
-                </p>
-
+                <p>Revisa tus productos y completa la información de entrega.</p>
             </div>
         </section>
 
         <section class="py-5 seccion-pedido">
             <div class="container">
-
                 <div class="row g-4">
-
                     <div class="col-lg-7">
                         <div class="caja-pedido">
-
                             <h2>Información del cliente</h2>
-
-                            <div id="pedido-vacio"
-                                class="alert alert-warning d-none"
-                                role="status">
-
-                                Tu carrito está vacío.
-
-                                <a href="menu.html">
-                                    Ir al menú para elegir alimentos
-                                </a>.
-
+                            <div id="pedido-vacio" class="alert alert-warning d-none" role="status">
+                                Tu carrito está vacío. <a href="menu.html">Ir al menú para elegir alimentos</a>.
                             </div>
+                            <p class="texto-ayuda" id="ayuda-formulario">Los campos marcados con * son obligatorios.</p>
 
-                            <p class="texto-ayuda" id="ayuda-formulario">
-                                Los campos marcados con * son obligatorios.
-                            </p>
-
-                            <form id="formulario-pedido"
-                                class="d-none"
-                                novalidate>
-
+                            <form id="formulario-pedido" class="d-none" novalidate>
                                 <div class="row g-3">
-
                                     <div class="col-md-6">
-
-                                        <label for="nombre-cliente"
-                                            class="form-label">
-                                            Nombre completo *
-                                        </label>
-
-                                        <input type="text"
-                                            class="form-control"
-                                            id="nombre-cliente"
-                                            name="nombre"
-                                            minlength="3"
-                                            maxlength="80"
-                                            autocomplete="name"
-                                            required>
-
-                                        <small class="error-dato"
-                                            id="error-nombre-cliente"></small>
-
+                                        <label for="nombre-cliente" class="form-label">Nombre completo *</label>
+                                        <input type="text" class="form-control" id="nombre-cliente"
+                                            name="nombre" minlength="3" maxlength="80" autocomplete="name" required>
+                                        <small class="error-dato" id="error-nombre-cliente"></small>
                                     </div>
 
                                     <div class="col-md-6">
-
-                                        <label for="telefono-cliente"
-                                            class="form-label">
-                                            Teléfono (10 dígitos) *
-                                        </label>
-
-                                        <input type="tel"
-                                            class="form-control"
-                                            id="telefono-cliente"
-                                            name="telefono"
-                                            inputmode="numeric"
-                                            pattern="[0-9]{10}"
-                                            minlength="10"
-                                            maxlength="10"
-                                            autocomplete="tel"
-                                            required>
-
-                                        <small class="error-dato"
-                                            id="error-telefono-cliente"></small>
-
+                                        <label for="telefono-cliente" class="form-label">Teléfono (10 dígitos) *</label>
+                                        <input type="tel" class="form-control" id="telefono-cliente"
+                                            name="telefono" inputmode="numeric" pattern="[0-9]{10}"
+                                            minlength="10" maxlength="10" autocomplete="tel" required>
+                                        <small class="error-dato" id="error-telefono-cliente"></small>
                                     </div>
 
                                     <div class="col-12">
-
-                                        <label for="tipo-entrega"
-                                            class="form-label">
-                                            ¿Cómo recibirás tu pedido? *
-                                        </label>
-
-                                        <select class="form-select"
-                                            id="tipo-entrega"
-                                            name="entrega"
-                                            required>
-
-                                            <option value="">
-                                                Selecciona una opción
-                                            </option>
-
-                                            <option value="recoger">
-                                                Recoger en el negocio
-                                            </option>
-
-                                            <option value="domicilio">
-                                                Entrega a domicilio
-                                            </option>
-
+                                        <label for="tipo-entrega" class="form-label">¿Cómo recibirás tu pedido? *</label>
+                                        <select class="form-select" id="tipo-entrega" name="entrega" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="recoger">Recoger en el negocio</option>
+                                            <option value="domicilio">Entrega a domicilio</option>
                                         </select>
-
-                                        <small class="error-dato"
-                                            id="error-tipo-entrega"></small>
-
+                                        <small class="error-dato" id="error-tipo-entrega"></small>
                                     </div>
 
-                                    <div class="col-12 d-none"
-                                        id="grupo-direccion">
-
-                                        <label for="direccion-cliente"
-                                            class="form-label">
-                                            Dirección de entrega *
-                                        </label>
-
-                                        <input type="text"
-                                            class="form-control"
-                                            id="direccion-cliente"
-                                            name="direccion"
-                                            minlength="8"
-                                            maxlength="150"
+                                    <div class="col-12 d-none" id="grupo-direccion">
+                                        <label for="direccion-cliente" class="form-label">Dirección de entrega *</label>
+                                        <input type="text" class="form-control" id="direccion-cliente"
+                                            name="direccion" minlength="8" maxlength="150"
                                             autocomplete="street-address">
-
-                                        <small class="error-dato"
-                                            id="error-direccion-cliente"></small>
-
+                                        <small class="error-dato" id="error-direccion-cliente"></small>
                                     </div>
 
                                     <div class="col-12">
-
-                                        <label for="indicaciones-pedido"
-                                            class="form-label">
-                                            Indicaciones adicionales
-                                        </label>
-
-                                        <textarea class="form-control"
-                                            id="indicaciones-pedido"
-                                            name="indicaciones"
-                                            rows="3"
-                                            maxlength="250"
+                                        <label for="indicaciones-pedido" class="form-label">Indicaciones adicionales</label>
+                                        <textarea class="form-control" id="indicaciones-pedido" name="indicaciones"
+                                            rows="3" maxlength="250"
                                             placeholder="Ejemplo: sin cebolla o salsa aparte"></textarea>
-
                                     </div>
 
                                     <div class="col-12">
-
                                         <div class="form-check">
-
-                                            <input type="checkbox"
-                                                class="form-check-input"
-                                                id="confirmar-productos"
-                                                required>
-
-                                            <label class="form-check-label"
-                                                for="confirmar-productos">
-
-                                                He revisado los productos
-                                                y precios de mi carrito. *
-
+                                            <input type="checkbox" class="form-check-input" id="confirmar-productos" required>
+                                            <label class="form-check-label" for="confirmar-productos">
+                                                He revisado los productos y precios de mi carrito. *
                                             </label>
-
                                         </div>
-
-                                        <small class="error-dato"
-                                            id="error-confirmar-productos"></small>
-
+                                        <small class="error-dato" id="error-confirmar-productos"></small>
                                     </div>
-
                                 </div>
 
-                                <p class="mensaje-validacion mt-3"
-                                    id="mensaje-validacion"
-                                    role="alert"
-                                    aria-live="polite"></p>
-
-                                <button class="btn boton-verde mt-2"
-                                    type="submit"
-                                    id="revisar-pedido">
-
+                                <p class="mensaje-validacion mt-3" id="mensaje-validacion" role="alert" aria-live="polite"></p>
+                                <button class="btn boton-verde mt-2" type="submit" id="revisar-pedido">
                                     Revisar datos del pedido
-
                                 </button>
-
                             </form>
 
-                            <div class="confirmacion-pedido d-none mt-4"
-                                id="confirmacion-pedido"
-                                role="status"
-                                aria-live="polite">
-
+                            <div class="confirmacion-pedido d-none mt-4" id="confirmacion-pedido" role="status" aria-live="polite">
                                 <h3>Resumen de tus datos</h3>
-
-                                <p id="datos-confirmados"
-                                    class="mb-2"></p>
-
-                                <p class="mb-3">
-                                    Revisa que la información sea correcta
-                                    antes de enviarla.
-                                </p>
-
-                                <a id="enviar-whatsapp"
-                                    class="btn boton-verde"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-
+                                <p id="datos-confirmados" class="mb-2"></p>
+                                <p class="mb-3">Revisa que la información sea correcta antes de enviarla.</p>
+                                <a id="enviar-whatsapp" class="btn boton-verde" target="_blank" rel="noopener noreferrer">
                                     Enviar pedido por WhatsApp
-
                                 </a>
-
-                                <p class="texto-ayuda mt-3 mb-0">
-                                    Se abrirá WhatsApp con el mensaje preparado.
-                                    Debes presionar Enviar dentro de WhatsApp
-                                    para compartir tu pedido. La disponibilidad
-                                    y el costo de entrega se confirman
-                                    con el negocio.
-                                </p>
-
+                                <p class="texto-ayuda mt-3 mb-0">Se abrirá WhatsApp con el mensaje preparado. Debes presionar Enviar dentro de WhatsApp para compartir tu pedido. La disponibilidad y el costo de entrega se confirman con el negocio.</p>
                             </div>
-
                         </div>
                     </div>
 
                     <div class="col-lg-5">
-
-                        <aside class="caja-pedido"
-                            aria-label="Resumen de productos">
-
+                        <aside class="caja-pedido" aria-label="Resumen de productos">
                             <h2>Resumen del carrito</h2>
-
-                            <p id="aviso-resumen"
-                                role="status"
-                                aria-live="polite"></p>
-
+                            <p id="aviso-resumen" role="status" aria-live="polite"></p>
                             <div id="resumen-productos"></div>
-
                             <div class="total-carrito d-flex justify-content-between align-items-center gap-2">
-
                                 <span>Total de productos:</span>
-
-                                <strong id="total-pedido">
-                                    $0 MXN
-                                </strong>
-
+                                <strong id="total-pedido">$0 MXN</strong>
                             </div>
-
-                            <p class="texto-ayuda mt-3">
-                                El total no incluye un posible costo de envío.
-                            </p>
-
-                            <a class="btn boton-contorno mt-2"
-                                href="carrito.html">
-
-                                Modificar mi carrito
-
-                            </a>
-
+                            <p class="texto-ayuda mt-3">El total no incluye un posible costo de envío.</p>
+                            <a class="btn boton-contorno mt-2" href="carrito.html">Modificar mi carrito</a>
                         </aside>
-
                     </div>
-
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="pie-pagina py-4">
-
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-
-            <p class="m-0 nombre-footer">
-                LA ESCONDIDA
-            </p>
-
-            <p class="m-0">
-                Tacos · Antojitos · Bocadillos · Bebidas
-            </p>
-
+            <p class="m-0 nombre-footer">LA ESCONDIDA</p>
+            <p class="m-0">Tacos · Antojitos · Bocadillos · Bebidas</p>
             <a href="menu.html">Volver al menú</a>
-
         </div>
-
     </footer>
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="function.js"></script>
-
 </body>
 </html>
