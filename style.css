@@ -767,3 +767,131 @@ section[id] {
         white-space: normal;
     }
 }
+
+/* TARJETAS CENTRADAS EN LAPTOP Y CELULAR */
+.tarjeta-comida, .tarjeta-pequena, .tarjeta-valor,
+.seccion-menu .tarjeta-menu, .seccion-menu .tarjeta-tacos,
+.seccion-menu .tarjeta-texto, .seccion-menu .titulo-menu {
+    text-align: center;
+}
+.foto-comida, .foto-pequena,
+.seccion-menu .tarjeta-menu > .imagen-menu {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+}
+.seccion-menu .row.g-4 {
+    /* Reparte al centro las filas con uno o dos productos */
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.seccion-menu .row.g-4 > article {
+    display: flex;
+}
+.seccion-menu .row.g-4 > article > .tarjeta-menu {
+    width: 100%;
+}
+.seccion-menu .tarjeta-menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.seccion-menu .contenido-menu {
+    flex: 1;
+}
+.seccion-menu .tarjeta-tacos .imagen-menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    max-height: 450px;
+    object-fit: cover;
+}
+.seccion-menu .linea-precio {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 14px 0;
+}
+.seccion-menu .linea-precio > span {
+    display: block;
+    width: 100%;
+}
+.seccion-menu .linea-carne .etiqueta-carne {
+    text-align: center;
+}
+.seccion-menu .precio-y-boton,
+.seccion-menu .linea-carne .precio-y-boton {
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.seccion-menu .precio-y-boton strong {
+    min-width: 55px;
+    text-align: center;
+}
+.seccion-menu .tarjeta-texto {
+    max-width: 820px;
+    margin-inline: auto;
+}
+
+/* ACCESO AL CARRITO SIEMPRE VISIBLE EN EL MOVIL */
+.carrito-movil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 11px;
+    border-radius: 8px;
+    background: var(--crema);
+    color: var(--verde);
+    border: 1px solid var(--crema);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.carrito-movil:hover, .carrito-movil:focus-visible {
+    background: var(--blanco);
+    color: var(--verde-oscuro);
+}
+@media (max-width: 991.98px) {
+    .barra .container { gap: 7px; }
+    .barra .marca {
+        margin-right: auto;
+        font-size: clamp(23px, 5.8vw, 32px);
+    }
+    .barra .navbar-toggler { padding: 6px 8px; }
+    .barra .navbar-collapse { flex-basis: 100%; }
+    .seccion-menu .tarjeta-tacos .imagen-menu {
+        height: auto;
+        min-height: 0;
+        max-height: 360px;
+        aspect-ratio: 16 / 10;
+    }
+}
+@media (max-width: 575.98px) {
+    .seccion-menu .tarjeta-menu {
+        width: 100%;
+        max-width: 470px;
+        margin-inline: auto;
+    }
+    .seccion-menu .contenido-menu,
+    .seccion-menu .contenido-tacos,
+    .seccion-menu .tarjeta-texto { padding: 20px 16px; }
+    .seccion-menu .tipo-carne {
+        flex: 1 1 155px;
+        max-width: 210px;
+    }
+    .seccion-menu .btn-agregar {
+        min-height: 42px;
+        padding: 9px 13px;
+    }
+}
+@media (max-width: 360px) {
+    .barra .marca { font-size: 23px; }
+    .carrito-movil { padding: 7px 8px; font-size: 11px; }
+    .barra .navbar-toggler { padding: 5px 6px; }
+}
