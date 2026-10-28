@@ -660,3 +660,69 @@ if (formularioPedido) {
     mostrarResumenPedido();
 
 }
+
+
+
+// FORMULARIO DE CONTACTO - COMMIT 08
+const formularioContacto = document.querySelector("#formulario-contacto");
+
+if (formularioContacto) {
+    const camposContacto = formularioContacto.querySelectorAll("[required]");
+    const avisoContacto = document.querySelector("#contacto-aviso");
+    const confirmacionContacto = document.querySelector("#contacto-confirmacion");
+    const enlaceContacto = document.querySelector("#contacto-enviar");
+
+    function validarContacto(campo) {
+        const valido = campo.checkValidity() && campo.value.trim() !== "";
+        campo.classList.toggle("campo-invalido", !valido);
+        const aviso = document.getElementById("error-" + campo.id);
+        aviso.textContent = valido ? "" : "Completa correctamente este campo.";
+        return valido;
+    }
+
+    camposContacto.forEach(function(campo) {
+        campo.addEventListener("input", function() {
+            validarContacto(campo);
+            confirmacionContacto.classList.add("d-none");
+            enlaceContacto.removeAttribute("href");
+        });
+        campo.addEventListener("change", function() {
+            validarContacto(campo);
+            confirmacionContacto.classList.add("d-none");
+            enlaceContacto.removeAttribute("href");
+        });
+    });
+
+    formularioContacto.addEventListener("submit", function(evento) {
+        evento.preventDefault();
+        avisoContacto.textContent = "";
+        confirmacionContacto.classList.add("d-none");
+
+        let correcto = true;
+        let primerError = null;
+        camposContacto.forEach(function(campo) {
+            if (!validarContacto(campo)) {
+                correcto = false;
+                if (!primerError) primerError = campo;
+            }
+        });
+
+        if (!correcto) {
+            avisoContacto.textContent = "Revisa los campos marcados antes de continuar.";
+            primerError.focus();
+            return;
+        }
+
+        const nombre = document.querySelector("#contacto-nombre").value.trim();
+        const telefono = document.querySelector("#contacto-telefono").value.trim();
+        const asunto = document.querySelector("#contacto-asunto").value;
+        const mensaje = document.querySelector("#contacto-mensaje").value.trim();
+
+        const texto = "Hola, tengo una consulta para La Escondida.\n\n" +
+            "Nombre: " + nombre + "\nTelefono: " + telefono +
+            "\nAsunto: " + asunto + "\nMensaje: " + mensaje;
+
+        enlaceContacto.href = "https://wa.me/525585109332?text=" + encodeURIComponent(texto);
+        confirmacionContacto.classList.remove("d-none");
+    });
+}

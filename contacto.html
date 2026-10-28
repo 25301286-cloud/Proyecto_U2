@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta a La Escondida por teléfono o WhatsApp para consultar nuestros antojitos y pedidos.">
+    <title>La Escondida | Contacto</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg barra">
+            <div class="container">
+                <a class="navbar-brand marca" href="index.html">LA ESCONDIDA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuNavegacion">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#variedad">Especialidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html#bebidas">Bebidas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>    
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link activo" href="contacto.html" aria-current="page">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (<span class="contador-carrito">0</span>)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="encabezado-menu py-5">
+            <div class="container text-center">
+                <p class="etiqueta-clara">ESTAMOS PARA ATENDERTE</p>
+                <h1>Contacto</h1>
+                <p>¿Tienes una pregunta sobre el menú o los pedidos? Escríbenos.</p>
+            </div>
+        </section>
+
+        <section class="seccion-pedido py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <article class="caja-pedido">
+                            <h2>Habla con La Escondida</h2>
+                            <p>Puedes consultar disponibilidad, opciones de entrega y detalles de tus platillos.</p>
+                            <p class="mb-1"><strong>Teléfono:</strong></p>
+                            <p><a class="enlace-contacto" href="tel:+525585109332">55 8510 9332</a></p>
+                            <a class="btn boton-verde mb-3" href="https://wa.me/525585109332?text=Hola%2C%20quiero%20hacer%20una%20consulta%20a%20La%20Escondida" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+                            <p class="texto-ayuda mb-0">Pregunta por la ubicación y los horarios de atención para recoger tu pedido, o confirma si hay servicio a domicilio en tu zona.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="caja-pedido">
+                            <h2>Envíanos una consulta</h2>
+                            <p class="texto-ayuda">Completa tus datos y prepararemos un mensaje para WhatsApp. Los campos marcados con * son obligatorios.</p>
+                            <form id="formulario-contacto" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="contacto-nombre" class="form-label">Tu nombre *</label>
+                                        <input type="text" class="form-control" id="contacto-nombre" minlength="3" maxlength="80" autocomplete="name" required>
+                                        <small class="error-dato" id="error-contacto-nombre"></small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contacto-telefono" class="form-label">Tu teléfono (10 dígitos) *</label>
+                                        <input type="tel" class="form-control" id="contacto-telefono" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" autocomplete="tel" required>
+                                        <small class="error-dato" id="error-contacto-telefono"></small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="contacto-asunto" class="form-label">Motivo de la consulta *</label>
+                                        <select class="form-select" id="contacto-asunto" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="Menú y productos">Menú y productos</option>
+                                            <option value="Entrega y recolección">Entrega y recolección</option>
+                                            <option value="Otra consulta">Otra consulta</option>
+                                        </select>
+                                        <small class="error-dato" id="error-contacto-asunto"></small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="contacto-mensaje" class="form-label">Escribe tu mensaje *</label>
+                                        <textarea class="form-control" id="contacto-mensaje" rows="4" minlength="10" maxlength="500" placeholder="Cuéntanos qué deseas saber" required></textarea>
+                                        <small class="error-dato" id="error-contacto-mensaje"></small>
+                                    </div>
+                                </div>
+                                <p class="mensaje-validacion mt-3" id="contacto-aviso" role="alert" aria-live="polite"></p>
+                                <button type="submit" class="btn boton-verde mt-2">Preparar consulta</button>
+                            </form>
+                            <div class="confirmacion-pedido d-none mt-4" id="contacto-confirmacion" role="status" aria-live="polite">
+                                <h3>Consulta preparada</h3>
+                                <p>Revisa los datos. WhatsApp se abrirá con el mensaje; tú decides si lo envías.</p>
+                                <a id="contacto-enviar" class="btn boton-verde" target="_blank" rel="noopener noreferrer">Abrir en WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <p class="m-0 nombre-footer">LA ESCONDIDA</p>
+            <p class="m-0">Tacos · Antojitos · Bocadillos · Bebidas</p>
+            <a href="menu.html">Volver al menú</a>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="function.js"></script>
+</body>
+</html>

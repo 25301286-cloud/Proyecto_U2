@@ -816,3 +816,110 @@ section[id] {
     line-height: 1.8;
     margin-bottom: 0;
 }
+
+/* PAGINA CONTACTO */
+.enlace-contacto {
+    color: var(--verde);
+    font-weight: 700;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+.enlace-contacto:hover,
+.enlace-contacto:focus {
+    color: var(--verde-oscuro);
+}
+
+/* HERO NUEVO DE INICIO */
+.hero-inicio {
+    position: relative;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("imagenes/01_tacos.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-capa {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-texto {
+    max-width: 820px;
+    margin: 0 auto;
+    color: #ffffff;
+    padding: 80px 20px;
+}
+
+.hero-texto .etiqueta {
+    color: #d8f0e2;
+    margin-bottom: 18px;
+}
+
+.hero-texto h1 {
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.hero-descripcion {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    max-width: 760px;
+    margin: 0 auto 30px auto;
+    color: #f3f3f3;
+}
+
+.hero-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.boton-contorno-claro {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.boton-contorno-claro:hover,
+.boton-contorno-claro:focus {
+    background-color: #ffffff;
+    color: var(--verde);
+}
+
+.hero-categorias {
+    margin: 0;
+    font-weight: 600;
+    color: #d8f0e2;
+}
+
+/* AJUSTE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-inicio {
+        min-height: 560px;
+    }
+
+    .hero-texto {
+        padding: 70px 14px;
+    }
+
+    .hero-descripcion {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
