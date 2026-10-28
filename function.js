@@ -1,4 +1,3 @@
-
 // CARRITO DE LA ESCONDIDA
 
 let carrito = [];
@@ -23,6 +22,27 @@ const cantidadCarrito = document.getElementById("cantidad-carrito");
 const vaciarCarrito = document.getElementById("vaciar-carrito");
 const mensajeCarrito = document.getElementById("mensaje-carrito");
 const mensajeProducto = document.getElementById("mensaje-producto");
+
+// PERMITIR SOLO NUMEROS EN LOS TELEFONOS
+const camposTelefono = document.querySelectorAll('input[type="tel"]');
+
+camposTelefono.forEach(function(campo) {
+    campo.addEventListener("input", function() {
+        campo.value = campo.value.replace(/\D/g, "").slice(0, 10);
+    });
+});
+
+
+// PERMITIR SOLO LETRAS EN LOS NOMBRES
+const camposNombre = document.querySelectorAll(
+    "#nombre-cliente, #contacto-nombre"
+);
+
+camposNombre.forEach(function(campo) {
+    campo.addEventListener("input", function() {
+        campo.value = campo.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]/g, "");
+    });
+});
 
 // GUARDAR EL CARRITO
 function guardarCarrito() {
@@ -135,6 +155,15 @@ botonesAgregar.forEach(function(boton) {
             return producto.nombre === nombre;
         });
 
+        if (encontrado && encontrado.cantidad + cantidad > 99) {
+            if (mensajeProducto) {
+                mensajeProducto.textContent =
+                    "El máximo es de 99 unidades del mismo producto.";
+            }
+            campo.focus();
+            return;
+        }
+
         if (encontrado) {
 
             encontrado.cantidad = encontrado.cantidad + cantidad;
@@ -234,7 +263,13 @@ function mostrarCarrito() {
             "Aumentar " + producto.nombre
         );
 
+        mas.disabled = producto.cantidad >= 99;
+
         mas.addEventListener("click", function() {
+
+            if (producto.cantidad >= 99) {
+                return;
+            }
 
             producto.cantidad = producto.cantidad + 1;
 
@@ -420,12 +455,14 @@ if (formularioPedido) {
 
         let valido = campo.checkValidity();
 
-        if (campo.type !== "checkbox" &&
-            campo.required &&
-            campo.value.trim() === "") {
+        // NO ACEPTAR CAMPOS CON SOLO ESPACIOS
+        if (campo.type !== "checkbox" && campo.required) {
+            const texto = campo.value.trim();
+            const minimo = campo.minLength > 0 ? campo.minLength : 1;
 
-            valido = false;
-
+            if (texto.length < minimo) {
+                valido = false;
+            }
         }
 
         campo.classList.toggle("campo-invalido", !valido);
@@ -673,10 +710,25 @@ if (formularioContacto) {
     const enlaceContacto = document.querySelector("#contacto-enviar");
 
     function validarContacto(campo) {
-        const valido = campo.checkValidity() && campo.value.trim() !== "";
+        const texto = campo.value.trim();
+        const minimo = campo.minLength > 0 ? campo.minLength : 1;
+        const valido = campo.checkValidity() && texto.length >= minimo;
+
         campo.classList.toggle("campo-invalido", !valido);
         const aviso = document.getElementById("error-" + campo.id);
-        aviso.textContent = valido ? "" : "Completa correctamente este campo.";
+
+        if (valido) {
+            aviso.textContent = "";
+        } else if (campo.type === "tel") {
+            aviso.textContent = "Escribe un teléfono de 10 dígitos.";
+        } else if (campo.tagName === "TEXTAREA") {
+            aviso.textContent = "Escribe un mensaje de al menos 10 caracteres.";
+        } else if (campo.tagName === "SELECT") {
+            aviso.textContent = "Selecciona el motivo de la consulta.";
+        } else {
+            aviso.textContent = "Escribe tu nombre (mínimo 3 caracteres).";
+        }
+
         return valido;
     }
 
