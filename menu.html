@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +12,7 @@
 </head>
 <body>
 
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg barra">
             <div class="container">
                 <a class="navbar-brand marca" href="index.html">LA ESCONDIDA</a>
@@ -30,6 +29,7 @@
                         <li class="nav-item"><a class="nav-link activo" href="menu.html" aria-current="page">Menú</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#variedad">Especialidades</a></li>
                         <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (<span class="contador-carrito">0</span>)</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +37,6 @@
     </header>
 
     <main>
-
         <section class="encabezado-menu py-5" id="categorias">
             <div class="container text-center">
                 <p class="etiqueta-clara">LA ESCONDIDA</p>
@@ -52,8 +51,11 @@
                 <a class="enlace-categoria" href="#tacos">Tacos</a>
                 <a class="enlace-categoria" href="#bocadillos">Bocadillos</a>
                 <a class="enlace-categoria" href="#bebidas">Bebidas</a>
+                <a class="enlace-categoria enlace-carrito" href="carrito.html">Ver carrito</a>
             </div>
         </section>
+
+        <p id="mensaje-producto" class="mensaje-agregado" role="status" aria-live="polite"></p>
 
         <section class="seccion-menu py-5" id="antojitos">
             <div class="container">
@@ -63,21 +65,28 @@
                 </div>
 
                 <div class="row g-4">
-
                     <article class="col-sm-6 col-lg-4">
                         <div class="tarjeta-menu">
                             <img src="imagenes/07_gorditas.jpg" class="imagen-menu img-fluid"
                                 alt="Gorditas rellenas sobre una tabla de madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Gorditas</h3>
-                                <div class="linea-precio">
-                                    <span>Sencillas</span>
-                                    <strong>$25</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Con carne</span>
-                                    <strong>$33</strong>
+                                <div class="linea-precio"><span>Sencillas</span><div class="precio-y-boton"><strong>$25</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Gorditas sencillas"><button type="button" class="btn-agregar" data-nombre="Gorditas sencillas" data-precio="25">Agregar</button></div></div>
+                                <div class="linea-precio linea-carne">
+                                    <label class="etiqueta-carne" for="carne-gorditas">Elige el tipo de carne</label>
+                                    <div class="precio-y-boton">
+                                        <select id="carne-gorditas" class="tipo-carne" aria-label="Tipo de carne para Gorditas">
+                                            <option value="">Selecciona carne</option>
+                                        <option value="Suadero">Suadero</option>
+                                        <option value="Longaniza">Longaniza</option>
+                                        <option value="Bisteck">Bisteck</option>
+                                        <option value="Pastor">Pastor</option>
+                                        <option value="Tripa">Tripa</option>
+                                        </select>
+                                        <strong class="precio-carne">Desde $33</strong>
+                                        <input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Gorditas">
+                                        <button type="button" class="btn-agregar" data-nombre="Gorditas" data-precio="33">Agregar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,16 +96,24 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/08_pambazos.jpg" class="imagen-menu img-fluid"
                                 alt="Pambazos rellenos sobre una tabla de madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Pambazos</h3>
-                                <div class="linea-precio">
-                                    <span>Sencillos</span>
-                                    <strong>$25</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Con carne</span>
-                                    <strong>$33</strong>
+                                <div class="linea-precio"><span>Sencillos</span><div class="precio-y-boton"><strong>$25</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Pambazos sencillos"><button type="button" class="btn-agregar" data-nombre="Pambazos sencillos" data-precio="25">Agregar</button></div></div>
+                                <div class="linea-precio linea-carne">
+                                    <label class="etiqueta-carne" for="carne-pambazos">Elige el tipo de carne</label>
+                                    <div class="precio-y-boton">
+                                        <select id="carne-pambazos" class="tipo-carne" aria-label="Tipo de carne para Pambazos">
+                                            <option value="">Selecciona carne</option>
+                                        <option value="Suadero">Suadero</option>
+                                        <option value="Longaniza">Longaniza</option>
+                                        <option value="Bisteck">Bisteck</option>
+                                        <option value="Pastor">Pastor</option>
+                                        <option value="Tripa">Tripa</option>
+                                        </select>
+                                        <strong class="precio-carne">Desde $33</strong>
+                                        <input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Pambazos">
+                                        <button type="button" class="btn-agregar" data-nombre="Pambazos" data-precio="33">Agregar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -106,16 +123,23 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/09_huarache.jpg" class="imagen-menu img-fluid"
                                 alt="Huarache con carne y queso sobre una tabla de madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Huaraches</h3>
-                                <div class="linea-precio">
-                                    <span>Con carne</span>
-                                    <strong>$45</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Con tripa</span>
-                                    <strong>$50</strong>
+                                <div class="linea-precio linea-carne">
+                                    <label class="etiqueta-carne" for="carne-huaraches">Elige el tipo de carne</label>
+                                    <div class="precio-y-boton">
+                                        <select id="carne-huaraches" class="tipo-carne" aria-label="Tipo de carne para Huaraches">
+                                            <option value="">Selecciona carne</option>
+                                        <option value="Suadero">Suadero</option>
+                                        <option value="Longaniza">Longaniza</option>
+                                        <option value="Bisteck">Bisteck</option>
+                                        <option value="Pastor">Pastor</option>
+                                        <option value="Tripa">Tripa</option>
+                                        </select>
+                                        <strong class="precio-carne">Desde $45</strong>
+                                        <input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Huaraches">
+                                        <button type="button" class="btn-agregar" data-nombre="Huaraches" data-precio="45">Agregar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -125,103 +149,72 @@
                 <article class="tarjeta-texto mt-4">
                     <h3>Quesadillas</h3>
                     <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="linea-precio">
-                                <span>Sencillas</span>
-                                <strong>$25</strong>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="linea-precio">
-                                <span>Con carne</span>
-                                <strong>$33</strong>
-                            </div>
-                        </div>
+                        <div class="col-sm-6"><div class="linea-precio"><span>Sencillas</span><div class="precio-y-boton"><strong>$25</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Quesadillas sencillas"><button type="button" class="btn-agregar" data-nombre="Quesadillas sencillas" data-precio="25">Agregar</button></div></div></div>
+                        <div class="col-sm-6"><div class="linea-precio linea-carne">
+                                    <label class="etiqueta-carne" for="carne-quesadillas">Elige el tipo de carne</label>
+                                    <div class="precio-y-boton">
+                                        <select id="carne-quesadillas" class="tipo-carne" aria-label="Tipo de carne para Quesadillas">
+                                            <option value="">Selecciona carne</option>
+                                        <option value="Suadero">Suadero</option>
+                                        <option value="Longaniza">Longaniza</option>
+                                        <option value="Bisteck">Bisteck</option>
+                                        <option value="Pastor">Pastor</option>
+                                        <option value="Tripa">Tripa</option>
+                                        </select>
+                                        <strong class="precio-carne">Desde $33</strong>
+                                        <input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Quesadillas">
+                                        <button type="button" class="btn-agregar" data-nombre="Quesadillas" data-precio="33">Agregar</button>
+                                    </div>
+                                </div></div>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <section class="seccion-menu seccion-blanca py-5" id="tacos">
             <div class="container">
-
                 <div class="titulo-menu mb-4">
-                    <p class="etiqueta">LOS CLASICOS</p>
+                    <p class="etiqueta">LOS CLÁSICOS</p>
                     <h2>Tacos</h2>
                 </div>
 
                 <article class="tarjeta-tacos">
                     <div class="row g-0 align-items-center">
-
                         <div class="col-lg-5">
                             <img src="imagenes/01_tacos.jpg" class="imagen-menu img-fluid"
                                 alt="Tacos con carne, cilantro y limón sobre una tabla" loading="lazy">
                         </div>
-
                         <div class="col-lg-7">
                             <div class="contenido-tacos">
-
                                 <h3>Elige tus tacos</h3>
-
-                                <div class="linea-precio">
-                                    <span>Suadero</span>
-                                    <strong>$26</strong>
-                                </div>
-
-                                <div class="linea-precio">
-                                    <span>Longaniza</span>
-                                    <strong>$26</strong>
-                                </div>
-
-                                <div class="linea-precio">
-                                    <span>Bisteck</span>
-                                    <strong>$26</strong>
-                                </div>
-
-                                <div class="linea-precio">
-                                    <span>Pastor</span>
-                                    <strong>$26</strong>
-                                </div>
-
-                                <div class="linea-precio">
-                                    <span>Tripa</span>
-                                    <strong>$30</strong>
-                                </div>
-
+                                <div class="linea-precio"><span>Suadero</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Taco de suadero"><button type="button" class="btn-agregar" data-nombre="Taco de suadero" data-precio="26">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Longaniza</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Taco de longaniza"><button type="button" class="btn-agregar" data-nombre="Taco de longaniza" data-precio="26">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Bisteck</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Taco de bisteck"><button type="button" class="btn-agregar" data-nombre="Taco de bisteck" data-precio="26">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Pastor</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Taco de pastor"><button type="button" class="btn-agregar" data-nombre="Taco de pastor" data-precio="26">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Tripa</span><div class="precio-y-boton"><strong>$30</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Taco de tripa"><button type="button" class="btn-agregar" data-nombre="Taco de tripa" data-precio="30">Agregar</button></div></div>
                             </div>
                         </div>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <section class="seccion-menu py-5" id="bocadillos">
             <div class="container">
-
                 <div class="titulo-menu mb-4">
                     <p class="etiqueta">ALGO PARA CADA ANTOJO</p>
                     <h2>Bocadillos</h2>
                 </div>
 
                 <div class="row g-4">
-
                     <article class="col-sm-6 col-lg-4">
                         <div class="tarjeta-menu">
                             <img src="imagenes/02_hamburguesa.jpg" class="imagen-menu img-fluid"
                                 alt="Hamburguesa con queso y vegetales sobre madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Hamburguesas</h3>
-                                <div class="linea-precio">
-                                    <span>Sencilla</span>
-                                    <strong>$60</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Hawaiana</span>
-                                    <strong>$75</strong>
-                                </div>
+                                <div class="linea-precio"><span>Sencilla</span><div class="precio-y-boton"><strong>$60</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Hamburguesa sencilla"><button type="button" class="btn-agregar" data-nombre="Hamburguesa sencilla" data-precio="60">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Hawaiana</span><div class="precio-y-boton"><strong>$75</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Hamburguesa hawaiana"><button type="button" class="btn-agregar" data-nombre="Hamburguesa hawaiana" data-precio="75">Agregar</button></div></div>
                             </div>
                         </div>
                     </article>
@@ -230,21 +223,11 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/03_hot_dogs.jpg" class="imagen-menu img-fluid"
                                 alt="Hot dogs con salsas sobre tabla de madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Hot dogs</h3>
-                                <div class="linea-precio">
-                                    <span>Sencillo</span>
-                                    <strong>$24</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>3 sencillos</span>
-                                    <strong>$65</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Hawaiano</span>
-                                    <strong>$29</strong>
-                                </div>
+                                <div class="linea-precio"><span>Sencillo</span><div class="precio-y-boton"><strong>$24</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Hot dog sencillo"><button type="button" class="btn-agregar" data-nombre="Hot dog sencillo" data-precio="24">Agregar</button></div></div>
+                                <div class="linea-precio"><span>3 sencillos</span><div class="precio-y-boton"><strong>$65</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de 3 hot dogs sencillos (paquete)"><button type="button" class="btn-agregar" data-nombre="3 hot dogs sencillos (paquete)" data-precio="65">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Hawaiano</span><div class="precio-y-boton"><strong>$29</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Hot dog hawaiano"><button type="button" class="btn-agregar" data-nombre="Hot dog hawaiano" data-precio="29">Agregar</button></div></div>
                             </div>
                         </div>
                     </article>
@@ -253,17 +236,10 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/04_alitas.jpg" class="imagen-menu img-fluid"
                                 alt="Alitas bañadas en salsa con papas y aderezo" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Alitas</h3>
-                                <div class="linea-precio">
-                                    <span>Solitas</span>
-                                    <strong>$75</strong>
-                                </div>
-                                <div class="linea-precio">
-                                    <span>Con papas</span>
-                                    <strong>$85</strong>
-                                </div>
+                                <div class="linea-precio"><span>Solitas</span><div class="precio-y-boton"><strong>$75</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Alitas solas"><button type="button" class="btn-agregar" data-nombre="Alitas solas" data-precio="75">Agregar</button></div></div>
+                                <div class="linea-precio"><span>Con papas</span><div class="precio-y-boton"><strong>$85</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Alitas con papas"><button type="button" class="btn-agregar" data-nombre="Alitas con papas" data-precio="85">Agregar</button></div></div>
                             </div>
                         </div>
                     </article>
@@ -272,13 +248,9 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/06_banderillas.jpg" class="imagen-menu img-fluid"
                                 alt="Banderillas acompañadas de papas y aderezos" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Banderilla</h3>
-                                <div class="linea-precio">
-                                    <span>Con papas</span>
-                                    <strong>$40</strong>
-                                </div>
+                                <div class="linea-precio"><span>Con papas</span><div class="precio-y-boton"><strong>$40</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Banderilla con papas"><button type="button" class="btn-agregar" data-nombre="Banderilla con papas" data-precio="40">Agregar</button></div></div>
                             </div>
                         </div>
                     </article>
@@ -287,71 +259,63 @@
                         <div class="tarjeta-menu">
                             <img src="imagenes/05_papas_francesas.jpg" class="imagen-menu img-fluid"
                                 alt="Papas a la francesa sobre madera" loading="lazy">
-
                             <div class="contenido-menu">
                                 <h3>Papas a la francesa</h3>
-                                <div class="linea-precio">
-                                    <span>Orden</span>
-                                    <strong>$35</strong>
-                                </div>
+                                <div class="linea-precio"><span>Orden</span><div class="precio-y-boton"><strong>$35</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Papas a la francesa"><button type="button" class="btn-agregar" data-nombre="Papas a la francesa" data-precio="35">Agregar</button></div></div>
                             </div>
                         </div>
                     </article>
-
                 </div>
 
                 <div class="row g-4 mt-1">
-
                     <article class="col-md-6">
                         <div class="tarjeta-texto h-100">
                             <h3>Dorilocos</h3>
-                            <div class="linea-precio">
-                                <span>Orden</span>
-                                <strong>$40</strong>
-                            </div>
+                            <div class="linea-precio"><span>Orden</span><div class="precio-y-boton"><strong>$40</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Dorilocos"><button type="button" class="btn-agregar" data-nombre="Dorilocos" data-precio="40">Agregar</button></div></div>
                         </div>
                     </article>
-
                     <article class="col-md-6">
                         <div class="tarjeta-texto h-100">
                             <h3>Nachos</h3>
-                            <div class="linea-precio">
-                                <span>Solos</span>
-                                <strong>$40</strong>
-                            </div>
-                            <div class="linea-precio">
-                                <span>Con carne</span>
-                                <strong>$50</strong>
-                            </div>
+                            <div class="linea-precio"><span>Solos</span><div class="precio-y-boton"><strong>$40</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Nachos solos"><button type="button" class="btn-agregar" data-nombre="Nachos solos" data-precio="40">Agregar</button></div></div>
+                            <div class="linea-precio linea-carne">
+                                    <label class="etiqueta-carne" for="carne-nachos">Elige el tipo de carne</label>
+                                    <div class="precio-y-boton">
+                                        <select id="carne-nachos" class="tipo-carne" aria-label="Tipo de carne para Nachos">
+                                            <option value="">Selecciona carne</option>
+                                        <option value="Suadero">Suadero</option>
+                                        <option value="Longaniza">Longaniza</option>
+                                        <option value="Bisteck">Bisteck</option>
+                                        <option value="Pastor">Pastor</option>
+                                        <option value="Tripa">Tripa</option>
+                                        </select>
+                                        <strong class="precio-carne">Desde $50</strong>
+                                        <input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Nachos">
+                                        <button type="button" class="btn-agregar" data-nombre="Nachos" data-precio="50">Agregar</button>
+                                    </div>
+                                </div>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
 
         <section class="seccion-menu seccion-blanca py-5" id="bebidas">
             <div class="container">
-
                 <div class="titulo-menu mb-4">
                     <p class="etiqueta">PARA ACOMPAÑAR</p>
                     <h2>Bebidas</h2>
                 </div>
-
                 <article class="tarjeta-texto">
                     <h3>Refrescos</h3>
                     <p>Coca-Cola, Jarritos y Boing.</p>
-
-                    <div class="linea-precio">
-                        <span>Refresco</span>
-                        <strong>$26</strong>
-                    </div>
+                    <div class="linea-precio"><span>Coca-Cola</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Coca-Cola"><button type="button" class="btn-agregar" data-nombre="Coca-Cola" data-precio="26">Agregar</button></div></div>
+                    <div class="linea-precio"><span>Jarritos</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Jarritos"><button type="button" class="btn-agregar" data-nombre="Jarritos" data-precio="26">Agregar</button></div></div>
+                    <div class="linea-precio"><span>Boing</span><div class="precio-y-boton"><strong>$26</strong><input class="cantidad-producto" type="number" min="1" max="99" value="1" aria-label="Cantidad de Boing"><button type="button" class="btn-agregar" data-nombre="Boing" data-precio="26">Agregar</button></div></div>
                 </article>
-
             </div>
         </section>
-
-    </main>
+</main>
 
     <footer class="pie-pagina py-4">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
@@ -362,5 +326,6 @@
     </footer>
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="function.js"></script>
 </body>
 </html>

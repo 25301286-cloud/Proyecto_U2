@@ -479,3 +479,202 @@ a.cuadro-categoria:focus {
     background-color: var(--crema);
     color: var(--verde);
 }
+
+
+/* CARRITO DE COMPRAS - TERCER COMMIT */
+
+.precio-y-boton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* BOTONES DE AGREGAR */
+.btn-agregar {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-agregar:hover,
+.btn-agregar:focus {
+    background-color: var(--verde-oscuro);
+}
+
+.enlace-carrito {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+/* SECCION DEL CARRITO */
+.seccion-carrito {
+    background-color: var(--crema);
+}
+
+.caja-carrito {
+    background-color: var(--blanco);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.caja-carrito h2 {
+    color: var(--verde);
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+/* BOTON VACIAR */
+.btn-vaciar {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    border-radius: 7px;
+    padding: 8px 15px;
+    font-weight: 600;
+}
+
+.btn-vaciar:hover,
+.btn-vaciar:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+/* PRODUCTOS DEL CARRITO */
+.producto-carrito {
+    border-bottom: 1px solid #E6E9E2;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.producto-carrito strong {
+    display: block;
+    color: var(--verde-oscuro);
+    margin-bottom: 5px;
+}
+
+/* CONTROLES DE CANTIDAD */
+.controles-carrito {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.controles-carrito button {
+    border: 1px solid var(--verde);
+    border-radius: 6px;
+    background-color: var(--blanco);
+    color: var(--verde);
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.controles-carrito button:hover {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+/* PRECIO TOTAL */
+.total-carrito {
+    padding-top: 20px;
+    font-size: 21px;
+    color: var(--verde);
+}
+
+.nota-carrito {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+/* ADAPTACION A CELULARES */
+@media (max-width: 575px) {
+    .caja-carrito {
+        padding: 18px;
+    }
+
+    .caja-carrito h2 {
+        font-size: 25px;
+    }
+
+    .producto-carrito {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ENCABEZADO QUE SE MANTIENE VISIBLE */
+.sticky-top {
+    z-index: 1030;
+}
+
+/* EVITAR QUE EL MENU TAPE LAS SECCIONES */
+section[id] {
+    scroll-margin-top: 85px;
+}
+
+/* SELECTOR DE CANTIDAD */
+.precio-y-boton {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.cantidad-producto {
+    width: 62px;
+    padding: 6px;
+    border: 1px solid #A7B7AA;
+    border-radius: 6px;
+    color: var(--verde-oscuro);
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+.cantidad-producto:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+
+/* MENSAJE DE PRODUCTO AGREGADO */
+.mensaje-agregado {
+    min-height: 0;
+    margin: 0;
+    color: var(--verde);
+    text-align: center;
+    font-weight: 600;
+}
+
+.mensaje-agregado:not(:empty) {
+    padding: 12px;
+    background-color: var(--crema);
+}
+
+/* BOTON VACIAR CARRITO */
+.btn-vaciar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ADAPTACION A CELULARES */
+@media (max-width: 575px) {
+
+    .linea-precio {
+        align-items: center;
+    }
+
+    .precio-y-boton {
+        gap: 7px;
+    }
+
+    .cantidad-producto {
+        width: 55px;
+    }
+}
