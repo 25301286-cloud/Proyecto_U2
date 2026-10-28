@@ -674,7 +674,7 @@ if (formularioPedido) {
         }
 
         mensaje = mensaje +
-            "\n\nPor favor, confirmame disponibilidad y total final. Gracias.";
+            "\n\nEse sería mi pedido. ¿Me podrían confirmar si lo pueden preparar y cuánto sería el total a pagar? ¡Muchas gracias!";
 
         // CREAR ENLACE DE WHATSAPP
         enlaceWhatsapp.href =
@@ -770,7 +770,7 @@ if (formularioContacto) {
         const asunto = document.querySelector("#contacto-asunto").value;
         const mensaje = document.querySelector("#contacto-mensaje").value.trim();
 
-        const texto = "Hola, tengo una consulta para La Escondida.\n\n" +
+        const texto = "¡Hola, buen día! Me gustaría hacerles una pregunta sobre La Escondida. ¿Me podrían ayudar, por favor?\n\n" +
             "Nombre: " + nombre + "\nTelefono: " + telefono +
             "\nAsunto: " + asunto + "\nMensaje: " + mensaje;
 

@@ -1,4 +1,4 @@
-/* COLORES DEL PROYECTO */
+/* ESTILOS GENERALES */
 body {
     --verde: #155B3A;
     --verde-oscuro: #22372B;
@@ -9,8 +9,6 @@ body {
     color: var(--verde-oscuro);
     font-family: 'Poppins', Arial, sans-serif;
 }
-
-/* ESTILOS GENERALES */
 html {
     scroll-behavior: smooth;
 }
@@ -20,8 +18,14 @@ h1, h2, h3 {
 a {
     text-decoration: none;
 }
+.seccion-blanca {
+    background-color: var(--blanco);
+}
+.seccion-crema {
+    background-color: var(--crema);
+}
 
-/* BARRA DE NAVEGACIÓN */
+/* NAVEGACION Y CARRITO MOVIL */
 .barra {
     background-color: var(--verde);
     padding: 17px 0;
@@ -54,6 +58,29 @@ a {
 .navbar-toggler {
     border: 1px solid var(--crema);
     background-color: var(--crema);
+}
+.sticky-top {
+    z-index: 1030;
+}
+section[id] {
+    scroll-margin-top: 85px;
+}
+.carrito-movil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 11px;
+    border-radius: 8px;
+    background: var(--crema);
+    color: var(--verde);
+    border: 1px solid var(--crema);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.carrito-movil:hover, .carrito-movil:focus-visible {
+    background: var(--blanco);
+    color: var(--verde-oscuro);
 }
 
 /* BOTONES Y ETIQUETAS */
@@ -92,13 +119,7 @@ a {
     color: var(--blanco);
 }
 
-/* TÍTULOS Y SECCIONES */
-.seccion-blanca {
-    background-color: var(--blanco);
-}
-.seccion-crema {
-    background-color: var(--crema);
-}
+/* TITULOS Y SECCIONES */
 .encabezado-seccion {
     margin-bottom: 36px;
 }
@@ -111,63 +132,6 @@ a {
     font-size: 15px;
     margin-bottom: 0;
 }
-
-/* TARJETAS DE PLATILLOS */
-.tarjeta-comida {
-    height: 100%;
-    background-color: var(--blanco);
-    border: 1px solid #E6E9E2;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-}
-.foto-comida {
-    display: block;
-    width: 100%;
-    height: auto;
-    background-color: #080808;
-}
-.informacion-comida {
-    padding: 22px;
-}
-.categoria-comida {
-    color: var(--verde);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-}
-.informacion-comida h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-.detalle-comida {
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-/* TARJETAS PEQUEÑAS DE ESPECIALIDADES */
-.tarjeta-pequena {
-    height: 100%;
-    background-color: var(--blanco);
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #E6E9E2;
-}
-.foto-pequena {
-    display: block;
-    width: 100%;
-    height: auto;
-    background-color: #080808;
-}
-.tarjeta-pequena h3 {
-    font-size: 18px;
-    padding: 17px 20px;
-    margin: 0;
-}
-
-/* CATEGORÍAS */
 .seccion-verde {
     background-color: var(--verde);
     color: var(--blanco);
@@ -196,156 +160,6 @@ a {
     font-weight: 700;
     text-align: center;
 }
-
-/* PIE DE PÁGINA */
-.pie-pagina {
-    background-color: var(--verde-oscuro);
-    color: var(--blanco);
-    font-size: 13px;
-}
-.nombre-footer {
-    font-family: 'Lobster', cursive;
-    font-weight: 400;
-    font-size: 30px;
-    letter-spacing: 0;
-    line-height: 1.2;
-    text-transform: none;
-}
-.pie-pagina a {
-    color: var(--blanco);
-    text-decoration: underline;
-}
-
-/* NOMBRE DE LA ESCONDIDA EN OTRAS SECCIONES */
-.nombre-marca {
-    font-family: 'Lobster', cursive;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-}
-
-/* CELULARES Y TABLETAS */
-@media (max-width: 991px) {
-    .barra .nav-link {
-        margin-left: 0;
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 575px) {
-    .marca {
-        font-size: 28px;
-    }
-    .encabezado-seccion h2,
-    .seccion-verde h2 {
-        font-size: 28px;
-    }
-}
-
-/* PÁGINA DEL MENÚ */
-.encabezado-menu {
-    background-color: var(--verde);
-    color: var(--blanco);
-}
-.encabezado-menu h1 {
-    font-size: 45px;
-}
-.encabezado-menu p:last-child {
-    margin-bottom: 0;
-}
-.navegacion-categorias {
-    background-color: var(--blanco);
-}
-.enlace-categoria {
-    display: inline-block;
-    color: var(--verde);
-    border: 2px solid var(--verde);
-    border-radius: 30px;
-    padding: 9px 20px;
-    font-weight: 600;
-    font-size: 14px;
-}
-.enlace-categoria:hover,
-.enlace-categoria:focus {
-    background-color: var(--verde);
-    color: var(--blanco);
-}
-.seccion-menu {
-    background-color: var(--crema);
-}
-.seccion-menu.seccion-blanca {
-    background-color: var(--blanco);
-}
-.titulo-menu h2 {
-    color: var(--verde);
-    font-size: 32px;
-}
-.tarjeta-menu,
-.tarjeta-tacos,
-.tarjeta-texto {
-    background-color: var(--blanco);
-    border: 1px solid #E6E9E2;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-}
-.tarjeta-menu {
-    height: 100%;
-}
-.imagen-menu {
-    display: block;
-    width: 100%;
-    height: auto;
-    background-color: #080808;
-}
-.contenido-menu,
-.contenido-tacos,
-.tarjeta-texto {
-    padding: 23px;
-}
-.contenido-menu h3,
-.contenido-tacos h3,
-.tarjeta-texto h3 {
-    color: var(--verde-oscuro);
-    font-size: 21px;
-    margin-bottom: 17px;
-}
-.tarjeta-texto p {
-    font-size: 14px;
-}
-.linea-precio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
-    border-bottom: 1px solid #E6E9E2;
-    padding: 10px 0;
-    font-size: 14px;
-}
-.linea-precio:last-child {
-    border-bottom: none;
-}
-.linea-precio strong {
-    color: var(--verde);
-    font-size: 16px;
-}
-
-@media (max-width: 575px) {
-    .encabezado-menu h1 {
-        font-size: 34px;
-    }
-    .titulo-menu h2 {
-        font-size: 28px;
-    }
-    .enlace-categoria {
-        font-size: 13px;
-        padding: 8px 13px;
-    }
-}
-
-/* ENLACES A LAS CATEGORÍAS DESDE INICIO */
 a.cuadro-categoria {
     display: block;
 }
@@ -355,307 +169,7 @@ a.cuadro-categoria:focus {
     color: var(--verde);
 }
 
-/* CARRITO DE COMPRAS */
-.precio-y-boton {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 12px;
-}
-.btn-agregar {
-    background-color: var(--verde);
-    color: var(--blanco);
-    border: none;
-    border-radius: 7px;
-    padding: 7px 11px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-}
-.btn-agregar:hover,
-.btn-agregar:focus {
-    background-color: var(--verde-oscuro);
-}
-.enlace-carrito {
-    background-color: var(--verde);
-    color: var(--blanco);
-}
-.seccion-carrito {
-    background-color: var(--crema);
-}
-.caja-carrito {
-    background-color: var(--blanco);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-}
-.caja-carrito h2 {
-    color: var(--verde);
-    margin-bottom: 0;
-    font-size: 30px;
-}
-.btn-vaciar {
-    background-color: var(--blanco);
-    border: 2px solid var(--verde);
-    color: var(--verde);
-    border-radius: 7px;
-    padding: 8px 15px;
-    font-weight: 600;
-}
-.btn-vaciar:hover,
-.btn-vaciar:focus {
-    background-color: var(--verde);
-    color: var(--blanco);
-}
-.producto-carrito {
-    border-bottom: 1px solid #E6E9E2;
-    padding: 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-.producto-carrito strong {
-    display: block;
-    color: var(--verde-oscuro);
-    margin-bottom: 5px;
-}
-.controles-carrito {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 9px;
-}
-.controles-carrito button {
-    border: 1px solid var(--verde);
-    border-radius: 6px;
-    background-color: var(--blanco);
-    color: var(--verde);
-    padding: 5px 10px;
-    font-weight: 600;
-}
-.controles-carrito button:hover {
-    background-color: var(--verde);
-    color: var(--blanco);
-}
-.total-carrito {
-    padding-top: 20px;
-    font-size: 21px;
-    color: var(--verde);
-}
-
-@media (max-width: 575px) {
-    .caja-carrito {
-        padding: 18px;
-    }
-    .caja-carrito h2 {
-        font-size: 25px;
-    }
-    .producto-carrito {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-/* NAVEGACION Y CANTIDADES */
-.sticky-top {
-    z-index: 1030;
-}
-
-/* Evita que el encabezado tape las secciones al navegar */
-section[id] {
-    scroll-margin-top: 85px;
-}
-
-/* Cantidad y boton junto al precio de cada producto */
-.cantidad-producto {
-    width: 62px;
-    padding: 6px;
-    border: 1px solid #A7B7AA;
-    border-radius: 6px;
-    color: var(--verde-oscuro);
-    background-color: var(--blanco);
-    text-align: center;
-}
-.cantidad-producto:focus {
-    outline: 2px solid var(--verde);
-    outline-offset: 2px;
-}
-.mensaje-agregado {
-    min-height: 0;
-    margin: 0;
-    color: var(--verde);
-    text-align: center;
-    font-weight: 600;
-}
-.mensaje-agregado:not(:empty) {
-    padding: 12px;
-    background-color: var(--crema);
-}
-.btn-vaciar:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-@media (max-width: 575px) {
-    .linea-precio {
-        align-items: center;
-    }
-    .precio-y-boton {
-        gap: 7px;
-    }
-    .cantidad-producto {
-        width: 55px;
-    }
-}
-
-/* SELECTOR DE CARNE PARA GORDITAS, PAMBAZOS, HUARACHES, QUESADILLAS Y NACHOS */
-.linea-carne {
-    display: block;
-}
-.etiqueta-carne {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.linea-carne .precio-y-boton {
-    justify-content: flex-start;
-    gap: 9px;
-}
-.tipo-carne {
-    width: 160px;
-    max-width: 100%;
-    padding: 7px;
-    background-color: var(--blanco);
-    color: var(--verde-oscuro);
-    border: 1px solid #A7B7AA;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 13px;
-}
-.tipo-carne:focus {
-    outline: 2px solid var(--verde);
-    outline-offset: 2px;
-}
-.tipo-carne.campo-invalido {
-    border: 2px solid #B42318;
-}
-
-/* FORMULARIOS */
-.seccion-pedido {
-    background-color: var(--crema);
-}
-.caja-pedido {
-    background-color: var(--blanco);
-    border: 1px solid #E6E9E2;
-    border-radius: 15px;
-    padding: 28px;
-    height: 100%;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-}
-.caja-pedido h2 {
-    color: var(--verde);
-    font-size: 25px;
-    margin-bottom: 18px;
-}
-.caja-pedido .form-label {
-    font-weight: 600;
-    font-size: 14px;
-}
-.caja-pedido .form-control:focus,
-.caja-pedido .form-select:focus {
-    border-color: var(--verde);
-    box-shadow: 0 0 0 2px #155B3A33;
-}
-.caja-pedido .campo-invalido {
-    border: 2px solid #B42318;
-}
-.error-dato {
-    display: block;
-    color: #B42318;
-    font-size: 12px;
-    margin-top: 4px;
-}
-.mensaje-validacion {
-    color: #B42318;
-    font-size: 13px;
-    font-weight: 600;
-}
-.texto-ayuda {
-    color: #4B594D;
-    font-size: 13px;
-}
-.linea-resumen {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    border-bottom: 1px solid #E6E9E2;
-    padding: 12px 0;
-    font-size: 14px;
-}
-.linea-resumen strong {
-    color: var(--verde);
-    white-space: nowrap;
-}
-.confirmacion-pedido {
-    background-color: var(--crema);
-    border-left: 4px solid var(--verde);
-    padding: 20px;
-    border-radius: 8px;
-    overflow-wrap: anywhere;
-}
-.confirmacion-pedido h3 {
-    color: var(--verde);
-    font-size: 19px;
-}
-
-@media (max-width: 575px) {
-    .caja-pedido {
-        padding: 18px;
-    }
-    .caja-pedido h2 {
-        font-size: 22px;
-    }
-}
-
-/* PAGINA NOSOTROS */
-.imagen-nosotros {
-    width: 100%;
-    border-radius: 16px;
-    object-fit: cover;
-}
-.tarjeta-valor {
-    background-color: var(--blanco);
-    border: 1px solid #E6E9E2;
-    border-radius: 15px;
-    padding: 27px;
-    height: 100%;
-}
-.tarjeta-valor h3 {
-    color: var(--verde);
-    font-size: 21px;
-}
-.tarjeta-valor p {
-    line-height: 1.8;
-    margin-bottom: 0;
-}
-
-/* PAGINA CONTACTO */
-.enlace-contacto {
-    color: var(--verde);
-    font-weight: 700;
-    text-decoration: underline;
-    overflow-wrap: anywhere;
-}
-.enlace-contacto:hover,
-.enlace-contacto:focus {
-    color: var(--verde-oscuro);
-}
-
-/* HERO NUEVO DE INICIO */
+/* PORTADA DE INICIO */
 .hero-inicio {
     position: relative;
     min-height: 690px;
@@ -724,51 +238,58 @@ section[id] {
     color: #d8f0e2;
 }
 
-/* PORTADA EN PANTALLAS PEQUENAS */
-@media (max-width: 768px) {
-    .hero-inicio {
-        min-height: 560px;
-    }
-    .hero-texto {
-        padding: 70px 14px;
-    }
-    .hero-descripcion {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
+/* TARJETAS DE INICIO Y ESPECIALIDADES */
+.tarjeta-comida {
+    height: 100%;
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
 }
-
-/* AJUSTES RESPONSIVE PARA PANTALLAS PEQUENAS */
-@media (max-width: 767px) {
-    .hero-capa {
-        background: rgba(0, 0, 0, 0.55);
-    }
-    .linea-resumen {
-        flex-wrap: wrap;
-        overflow-wrap: anywhere;
-    }
+.foto-comida {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
 }
-
-@media (max-width: 575px) {
-    .hero-botones .btn {
-        width: 100%;
-        max-width: 320px;
-    }
-    .hero-texto h1 {
-        line-height: 1.12;
-    }
-    .precio-y-boton {
-        justify-content: flex-start;
-    }
-    .caja-pedido button[type="submit"],
-    #enviar-whatsapp,
-    #contacto-enviar {
-        width: 100%;
-        white-space: normal;
-    }
+.informacion-comida {
+    padding: 22px;
 }
-
-/* TARJETAS CENTRADAS EN LAPTOP Y CELULAR */
+.categoria-comida {
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+.informacion-comida h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+.detalle-comida {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+.tarjeta-pequena {
+    height: 100%;
+    background-color: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #E6E9E2;
+}
+.foto-pequena {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
+}
+.tarjeta-pequena h3 {
+    font-size: 18px;
+    padding: 17px 20px;
+    margin: 0;
+}
 .tarjeta-comida, .tarjeta-pequena, .tarjeta-valor,
 .seccion-menu .tarjeta-menu, .seccion-menu .tarjeta-tacos,
 .seccion-menu .tarjeta-texto, .seccion-menu .titulo-menu {
@@ -782,8 +303,99 @@ section[id] {
     object-fit: cover;
     object-position: center;
 }
+
+/* MENU: ENCABEZADO Y CATEGORIAS */
+.encabezado-menu {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+.encabezado-menu h1 {
+    font-size: 45px;
+}
+.encabezado-menu p:last-child {
+    margin-bottom: 0;
+}
+.navegacion-categorias {
+    background-color: var(--blanco);
+}
+.enlace-categoria {
+    display: inline-block;
+    color: var(--verde);
+    border: 2px solid var(--verde);
+    border-radius: 30px;
+    padding: 9px 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.enlace-categoria:hover,
+.enlace-categoria:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+.seccion-menu {
+    background-color: var(--crema);
+}
+.seccion-menu.seccion-blanca {
+    background-color: var(--blanco);
+}
+.titulo-menu h2 {
+    color: var(--verde);
+    font-size: 32px;
+}
+
+/* MENU: TARJETAS, IMAGENES Y PRECIOS */
+.tarjeta-menu,
+.tarjeta-tacos,
+.tarjeta-texto {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+.tarjeta-menu {
+    height: 100%;
+}
+.imagen-menu {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #080808;
+}
+.contenido-menu,
+.contenido-tacos,
+.tarjeta-texto {
+    padding: 23px;
+}
+.contenido-menu h3,
+.contenido-tacos h3,
+.tarjeta-texto h3 {
+    color: var(--verde-oscuro);
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+.tarjeta-texto p {
+    font-size: 14px;
+}
+.linea-precio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 1px solid #E6E9E2;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.linea-precio:last-child {
+    border-bottom: none;
+}
+.linea-precio strong {
+    color: var(--verde);
+    font-size: 16px;
+}
 .seccion-menu .row.g-4 {
-    /* Reparte al centro las filas con uno o dos productos */
+    
     justify-content: space-evenly;
     align-items: stretch;
 }
@@ -839,32 +451,338 @@ section[id] {
     margin-inline: auto;
 }
 
-/* ACCESO AL CARRITO SIEMPRE VISIBLE EN EL MOVIL */
-.carrito-movil {
-    display: inline-flex;
+/* MENU: BOTONES, CANTIDADES Y CARNES */
+.precio-y-boton {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 9px 11px;
-    border-radius: 8px;
-    background: var(--crema);
-    color: var(--verde);
-    border: 1px solid var(--crema);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.btn-agregar {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 11px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-agregar:hover,
+.btn-agregar:focus {
+    background-color: var(--verde-oscuro);
+}
+.cantidad-producto {
+    width: 62px;
+    padding: 6px;
+    border: 1px solid #A7B7AA;
+    border-radius: 6px;
+    color: var(--verde-oscuro);
+    background-color: var(--blanco);
+    text-align: center;
+}
+.cantidad-producto:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+.mensaje-agregado {
+    min-height: 0;
+    margin: 0;
+    color: var(--verde);
+    text-align: center;
+    font-weight: 600;
+}
+.mensaje-agregado:not(:empty) {
+    padding: 12px;
+    background-color: var(--crema);
+}
+.linea-carne {
+    display: block;
+}
+.etiqueta-carne {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.linea-carne .precio-y-boton {
+    justify-content: flex-start;
+    gap: 9px;
+}
+.tipo-carne {
+    width: 160px;
+    max-width: 100%;
+    padding: 7px;
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    border: 1px solid #A7B7AA;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+}
+.tipo-carne:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+.tipo-carne.campo-invalido {
+    border: 2px solid #B42318;
+}
+
+/* CARRITO DE COMPRAS */
+.enlace-carrito {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+.seccion-carrito {
+    background-color: var(--crema);
+}
+.caja-carrito {
+    background-color: var(--blanco);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+.caja-carrito h2 {
+    color: var(--verde);
+    margin-bottom: 0;
+    font-size: 30px;
+}
+.btn-vaciar {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    border-radius: 7px;
+    padding: 8px 15px;
+    font-weight: 600;
+}
+.btn-vaciar:hover,
+.btn-vaciar:focus {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+.producto-carrito {
+    border-bottom: 1px solid #E6E9E2;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.producto-carrito strong {
+    display: block;
+    color: var(--verde-oscuro);
+    margin-bottom: 5px;
+}
+.controles-carrito {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+.controles-carrito button {
+    border: 1px solid var(--verde);
+    border-radius: 6px;
+    background-color: var(--blanco);
+    color: var(--verde);
+    padding: 5px 10px;
+    font-weight: 600;
+}
+.controles-carrito button:hover {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+.total-carrito {
+    padding-top: 20px;
+    font-size: 21px;
+    color: var(--verde);
+}
+.btn-vaciar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* FORMULARIO DE PEDIDOS Y VALIDACIONES */
+.seccion-pedido {
+    background-color: var(--crema);
+}
+.caja-pedido {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    padding: 28px;
+    height: 100%;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+.caja-pedido h2 {
+    color: var(--verde);
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+.caja-pedido .form-label {
+    font-weight: 600;
+    font-size: 14px;
+}
+.caja-pedido .form-control:focus,
+.caja-pedido .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 2px #155B3A33;
+}
+.caja-pedido .campo-invalido {
+    border: 2px solid #B42318;
+}
+.error-dato {
+    display: block;
+    color: #B42318;
+    font-size: 12px;
+    margin-top: 4px;
+}
+.mensaje-validacion {
+    color: #B42318;
+    font-size: 13px;
+    font-weight: 600;
+}
+.texto-ayuda {
+    color: #4B594D;
+    font-size: 13px;
+}
+.linea-resumen {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #E6E9E2;
+    padding: 12px 0;
+    font-size: 14px;
+}
+.linea-resumen strong {
+    color: var(--verde);
     white-space: nowrap;
 }
-.carrito-movil:hover, .carrito-movil:focus-visible {
-    background: var(--blanco);
+.confirmacion-pedido {
+    background-color: var(--crema);
+    border-left: 4px solid var(--verde);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+.confirmacion-pedido h3 {
+    color: var(--verde);
+    font-size: 19px;
+}
+
+/* PAGINA NOSOTROS */
+
+/* IMAGENES CIRCULARES DE NOSOTROS */
+.imagen-nosotros {
+    display: block;
+    width: 100%;
+    max-width: 390px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.tarjeta-valor {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    padding: 27px;
+    height: 100%;
+}
+.tarjeta-valor h3 {
+    color: var(--verde);
+    font-size: 21px;
+}
+.tarjeta-valor p {
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* PAGINA CONTACTO */
+.enlace-contacto {
+    color: var(--verde);
+    font-weight: 700;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+.enlace-contacto:hover,
+.enlace-contacto:focus {
     color: var(--verde-oscuro);
 }
+
+/* PIE DE PAGINA Y NOMBRE DE LA MARCA */
+.pie-pagina {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    font-size: 13px;
+}
+.nombre-footer {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
+}
+.pie-pagina a {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+.nombre-marca {
+    font-family: 'Lobster', cursive;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* ANIMACIONES SUAVES DE PRODUCTOS */
+.tarjeta-menu,
+.tarjeta-tacos,
+.tarjeta-texto,
+.tarjeta-comida,
+.tarjeta-pequena {
+    animation: aparecerTarjeta 0.6s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@keyframes aparecerTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.imagen-menu,
+.foto-comida,
+.foto-pequena {
+    transition: transform 0.35s ease;
+}
+
+/* RESPONSIVE: TABLETAS Y CELULARES */
+/* Menú desplegable y ajuste del encabezado */
 @media (max-width: 991.98px) {
-    .barra .container { gap: 7px; }
+    .barra .container {
+        gap: 7px;
+    }
+
     .barra .marca {
         margin-right: auto;
         font-size: clamp(23px, 5.8vw, 32px);
     }
-    .barra .navbar-toggler { padding: 6px 8px; }
-    .barra .navbar-collapse { flex-basis: 100%; }
+
+    .barra .navbar-toggler {
+        padding: 6px 8px;
+    }
+
+    .barra .navbar-collapse {
+        flex-basis: 100%;
+    }
+
     .seccion-menu .tarjeta-tacos .imagen-menu {
         height: auto;
         min-height: 0;
@@ -872,26 +790,210 @@ section[id] {
         aspect-ratio: 16 / 10;
     }
 }
+
+@media (max-width: 991px) {
+    .barra .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+/* Portada en pantallas medianas */
+@media (max-width: 768px) {
+    .hero-inicio {
+        min-height: 560px;
+    }
+
+    .hero-texto {
+        padding: 70px 14px;
+    }
+
+    .hero-descripcion {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-capa {
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    .linea-resumen {
+        flex-wrap: wrap;
+        overflow-wrap: anywhere;
+    }
+}
+
 @media (max-width: 575.98px) {
     .seccion-menu .tarjeta-menu {
         width: 100%;
         max-width: 470px;
         margin-inline: auto;
     }
+
     .seccion-menu .contenido-menu,
     .seccion-menu .contenido-tacos,
-    .seccion-menu .tarjeta-texto { padding: 20px 16px; }
+    .seccion-menu .tarjeta-texto {
+        padding: 20px 16px;
+    }
+
     .seccion-menu .tipo-carne {
         flex: 1 1 155px;
         max-width: 210px;
     }
+
     .seccion-menu .btn-agregar {
         min-height: 42px;
         padding: 9px 13px;
     }
 }
+
+/* Ajustes generales de celular */
+@media (max-width: 575px) {
+    .marca {
+        font-size: 28px;
+    }
+
+    .encabezado-seccion h2,
+    .seccion-verde h2 {
+        font-size: 28px;
+    }
+
+    .encabezado-menu h1 {
+        font-size: 34px;
+    }
+
+    .titulo-menu h2 {
+        font-size: 28px;
+    }
+
+    .enlace-categoria {
+        font-size: 13px;
+        padding: 8px 13px;
+    }
+
+    .caja-carrito {
+        padding: 18px;
+    }
+
+    .caja-carrito h2 {
+        font-size: 25px;
+    }
+
+    .producto-carrito {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .linea-precio {
+        align-items: center;
+    }
+
+    .precio-y-boton {
+        gap: 7px;
+        justify-content: flex-start;
+    }
+
+    .cantidad-producto {
+        width: 55px;
+    }
+
+    .caja-pedido {
+        padding: 18px;
+    }
+
+    .caja-pedido h2 {
+        font-size: 22px;
+    }
+
+    .hero-botones .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero-texto h1 {
+        line-height: 1.12;
+    }
+
+    .caja-pedido button[type="submit"],
+    #enviar-whatsapp,
+    #contacto-enviar {
+        width: 100%;
+        white-space: normal;
+    }
+}
+
+/* Celulares muy pequeños */
 @media (max-width: 360px) {
-    .barra .marca { font-size: 23px; }
-    .carrito-movil { padding: 7px 8px; font-size: 11px; }
-    .barra .navbar-toggler { padding: 5px 6px; }
+    .barra .marca {
+        font-size: 23px;
+    }
+
+    .carrito-movil {
+        padding: 7px 8px;
+        font-size: 11px;
+    }
+
+    .barra .navbar-toggler {
+        padding: 5px 6px;
+    }
+}
+
+
+/* ANIMACIONES AL PASAR EL CURSOR */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .tarjeta-menu:hover,
+    .tarjeta-tacos:hover,
+    .tarjeta-texto:hover,
+    .tarjeta-comida:hover,
+    .tarjeta-pequena:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .tarjeta-menu:hover .imagen-menu,
+    .tarjeta-tacos:hover .imagen-menu,
+    .tarjeta-comida:hover .foto-comida,
+    .tarjeta-pequena:hover .foto-pequena {
+        transform: scale(1.04);
+    }
+}
+
+/* ANIMACIONES AL TOCAR EN CELULARES */
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+    .tarjeta-menu:active,
+    .tarjeta-tacos:active,
+    .tarjeta-texto:active,
+    .tarjeta-comida:active,
+    .tarjeta-pequena:active {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .tarjeta-menu:active .imagen-menu,
+    .tarjeta-tacos:active .imagen-menu,
+    .tarjeta-comida:active .foto-comida,
+    .tarjeta-pequena:active .foto-pequena {
+        transform: scale(1.04);
+    }
+}
+
+/* ACCESIBILIDAD DE LAS ANIMACIONES */
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta-menu,
+    .tarjeta-tacos,
+    .tarjeta-texto,
+    .tarjeta-comida,
+    .tarjeta-pequena,
+    .imagen-nosotros {
+        animation: none;
+        transition: none;
+    }
+
+    .imagen-menu,
+    .foto-comida,
+    .foto-pequena {
+        transition: none;
+    }
 }
