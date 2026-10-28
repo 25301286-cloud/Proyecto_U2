@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Carrito de compras de La Escondida">
+    <meta name="description" content="Revisa y ajusta tu carrito de compras de La Escondida.">
     <title>La Escondida | Mi carrito</title>
 
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
@@ -12,42 +11,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg barra">
             <div class="container">
-                <a class="navbar-brand marca" href="index.html">
-                    LA ESCONDIDA
-                </a>
+                <a class="navbar-brand marca" href="index.html">LA ESCONDIDA</a>
 
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavegacion"
-                    aria-controls="menuNavegacion"
-                    aria-expanded="false"
-                    aria-label="Abrir menú de navegación">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuNavegacion" aria-controls="menuNavegacion"
+                    aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menuNavegacion">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Menú</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#variedad">Especialidades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html#bebidas">Bebidas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link activo" href="carrito.html">
-                                Carrito (<span class="contador-carrito">0</span>)
-                            </a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#variedad">Especialidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html#bebidas">Bebidas</a></li>
+                        <li class="nav-item"><a class="nav-link activo" aria-current="page" href="carrito.html">Carrito (<span class="contador-carrito">0</span>)</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -55,7 +37,6 @@
     </header>
 
     <main>
-
         <section class="encabezado-menu py-5">
             <div class="container text-center">
                 <p class="etiqueta-clara">LA ESCONDIDA</p>
@@ -66,27 +47,15 @@
 
         <section class="seccion-carrito py-5" id="carrito">
             <div class="container">
-
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-
                         <div class="caja-carrito">
-
                             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
-
-                                <h2>
-                                    Tu selección
-                                    (<span id="cantidad-carrito">0</span>)
-                                </h2>
-
-                                <button type="button" id="vaciar-carrito" class="btn-vaciar">
-                                    Vaciar carrito
-                                </button>
-
+                                <h2>Tu selección (<span id="cantidad-carrito">0</span>)</h2>
+                                <button type="button" id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
                             </div>
 
                             <p id="mensaje-carrito" role="status" aria-live="polite"></p>
-
                             <div id="lista-carrito"></div>
 
                             <div class="total-carrito d-flex justify-content-between align-items-center gap-2">
@@ -95,18 +64,14 @@
                             </div>
 
                             <div class="d-flex flex-wrap gap-3 mt-4">
-                                <a href="menu.html" class="btn boton-verde">
-                                    Seguir comprando
-                                </a>
+                                <a href="menu.html" class="btn boton-verde">Seguir comprando</a>
+                                <a href="pedido.html" class="btn boton-contorno d-none" id="continuar-pedido">Continuar con mi pedido</a>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="pie-pagina py-4">
@@ -119,6 +84,5 @@
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="function.js"></script>
-
 </body>
 </html>

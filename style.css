@@ -1,4 +1,3 @@
-
 /* COLORES DEL PROYECTO */
 body {
     --verde: #155B3A;
@@ -343,7 +342,7 @@ a {
     }
 }
 
-/* PAGINA DEL MENU */
+/* PÁGINA DEL MENÚ */
 .encabezado-menu {
     background-color: var(--verde);
     color: var(--blanco);
@@ -357,7 +356,6 @@ a {
     margin-bottom: 0;
 }
 
-/* BOTONES DE CATEGORIAS */
 .navegacion-categorias {
     background-color: var(--blanco);
 }
@@ -378,7 +376,6 @@ a {
     color: var(--blanco);
 }
 
-/* SECCIONES DEL MENU */
 .seccion-menu {
     background-color: var(--crema);
 }
@@ -392,7 +389,6 @@ a {
     font-size: 32px;
 }
 
-/* TARJETAS */
 .tarjeta-menu,
 .tarjeta-tacos,
 .tarjeta-texto {
@@ -432,7 +428,6 @@ a {
     font-size: 14px;
 }
 
-/* PRECIOS */
 .linea-precio {
     display: flex;
     flex-wrap: wrap;
@@ -453,7 +448,6 @@ a {
     font-size: 16px;
 }
 
-/* ADAPTACION A CELULARES */
 @media (max-width: 575px) {
     .encabezado-menu h1 {
         font-size: 34px;
@@ -469,7 +463,7 @@ a {
     }
 }
 
-/* ENLACES DESDE INICIO */
+/* ENLACES A LAS CATEGORÍAS DESDE INICIO */
 a.cuadro-categoria {
     display: block;
 }
@@ -482,14 +476,12 @@ a.cuadro-categoria:focus {
 
 
 /* CARRITO DE COMPRAS - TERCER COMMIT */
-
 .precio-y-boton {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* BOTONES DE AGREGAR */
 .btn-agregar {
     background-color: var(--verde);
     color: var(--blanco);
@@ -511,7 +503,6 @@ a.cuadro-categoria:focus {
     color: var(--blanco);
 }
 
-/* SECCION DEL CARRITO */
 .seccion-carrito {
     background-color: var(--crema);
 }
@@ -520,7 +511,7 @@ a.cuadro-categoria:focus {
     background-color: var(--blanco);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
 }
 
 .caja-carrito h2 {
@@ -529,7 +520,6 @@ a.cuadro-categoria:focus {
     font-size: 30px;
 }
 
-/* BOTON VACIAR */
 .btn-vaciar {
     background-color: var(--blanco);
     border: 2px solid var(--verde);
@@ -545,7 +535,6 @@ a.cuadro-categoria:focus {
     color: var(--blanco);
 }
 
-/* PRODUCTOS DEL CARRITO */
 .producto-carrito {
     border-bottom: 1px solid #E6E9E2;
     padding: 16px 0;
@@ -562,7 +551,6 @@ a.cuadro-categoria:focus {
     margin-bottom: 5px;
 }
 
-/* CONTROLES DE CANTIDAD */
 .controles-carrito {
     display: flex;
     align-items: center;
@@ -584,7 +572,6 @@ a.cuadro-categoria:focus {
     color: var(--blanco);
 }
 
-/* PRECIO TOTAL */
 .total-carrito {
     padding-top: 20px;
     font-size: 21px;
@@ -596,7 +583,6 @@ a.cuadro-categoria:focus {
     font-size: 13px;
 }
 
-/* ADAPTACION A CELULARES */
 @media (max-width: 575px) {
     .caja-carrito {
         padding: 18px;
@@ -612,17 +598,18 @@ a.cuadro-categoria:focus {
     }
 }
 
-/* ENCABEZADO QUE SE MANTIENE VISIBLE */
+
+/* CUARTO COMMIT: ENCABEZADO FIJO Y CARRITO EN OTRA PAGINA */
 .sticky-top {
     z-index: 1030;
 }
 
-/* EVITAR QUE EL MENU TAPE LAS SECCIONES */
+/* Evita que el encabezado tape las secciones al navegar */
 section[id] {
     scroll-margin-top: 85px;
 }
 
-/* SELECTOR DE CANTIDAD */
+/* Cantidad y boton junto al precio de cada producto */
 .precio-y-boton {
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -643,7 +630,6 @@ section[id] {
     outline-offset: 2px;
 }
 
-/* MENSAJE DE PRODUCTO AGREGADO */
 .mensaje-agregado {
     min-height: 0;
     margin: 0;
@@ -657,15 +643,12 @@ section[id] {
     background-color: var(--crema);
 }
 
-/* BOTON VACIAR CARRITO */
 .btn-vaciar:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-/* ADAPTACION A CELULARES */
 @media (max-width: 575px) {
-
     .linea-precio {
         align-items: center;
     }
@@ -676,5 +659,135 @@ section[id] {
 
     .cantidad-producto {
         width: 55px;
+    }
+}
+
+
+/* SELECTOR DE CARNE PARA GORDITAS, PAMBAZOS, HUARACHES, QUESADILLAS Y NACHOS */
+.linea-carne {
+    display: block;
+}
+
+.etiqueta-carne {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.linea-carne .precio-y-boton {
+    justify-content: flex-start;
+    gap: 9px;
+}
+
+.tipo-carne {
+    width: 160px;
+    max-width: 100%;
+    padding: 7px;
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    border: 1px solid #A7B7AA;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.tipo-carne:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+
+.tipo-carne.campo-invalido {
+    border: 2px solid #B42318;
+}
+
+
+/* FORMULARIO DE PEDIDOS - COMMIT 05 */
+.seccion-pedido {
+    background-color: var(--crema);
+}
+
+.caja-pedido {
+    background-color: var(--blanco);
+    border: 1px solid #E6E9E2;
+    border-radius: 15px;
+    padding: 28px;
+    height: 100%;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.caja-pedido h2 {
+    color: var(--verde);
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.caja-pedido .form-label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.caja-pedido .form-control:focus,
+.caja-pedido .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 2px #155B3A33;
+}
+
+.caja-pedido .campo-invalido {
+    border: 2px solid #B42318;
+}
+
+.error-dato {
+    display: block;
+    color: #B42318;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.mensaje-validacion {
+    color: #B42318;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.texto-ayuda {
+    color: #4B594D;
+    font-size: 13px;
+}
+
+.linea-resumen {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #E6E9E2;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.linea-resumen strong {
+    color: var(--verde);
+    white-space: nowrap;
+}
+
+.confirmacion-pedido {
+    background-color: var(--crema);
+    border-left: 4px solid var(--verde);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.confirmacion-pedido h3 {
+    color: var(--verde);
+    font-size: 19px;
+}
+
+@media (max-width: 575px) {
+    .caja-pedido {
+        padding: 18px;
+    }
+
+    .caja-pedido h2 {
+        font-size: 22px;
     }
 }
